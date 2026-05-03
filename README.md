@@ -18,6 +18,7 @@ Handling of unbalanced sample sizes and non-normal distributions
 
 # How to run the code: 
 
-#
+# Example outputs:
+The analysis produces group comparison summaries for each behavioral assay, including statistical test results (p-values, test statistics), effect direction, and visualization of behavioral distributions across treatment groups. For repeated-measures subsets, cross-assay correlation outputs are generated to assess consistency of behavioral responses across systems. Final outputs include publication-ready plots illustrating group differences and behavioral patterns across experimental conditions.
 
 
