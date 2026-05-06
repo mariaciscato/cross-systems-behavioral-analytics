@@ -47,6 +47,11 @@ Unequal sample sizes
 Non-normal distributions
 Cross-system repeated-measures datasets
 
+## Repository Contents
+
+- `crosss_analysis_code.Rmd` — main behavioral analytics workflow in R Markdown
+- `figures/` — representative output figures generated from the analysis
+
 
 # Running the analysis:
 
