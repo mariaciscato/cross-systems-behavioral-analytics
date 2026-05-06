@@ -1,24 +1,113 @@
 # cross-systems-behavioral-analytics
-End-to-end R workflow analyzing cross-system behavioral data with repeated-measures and independent cohort designs to assess treatment effects and metric robustness.
+End-to-end R workflow for analyzing cross-system behavioral data in mice using independent-group and repeated-measures experimental designs.
 
-# Problem statement
-This project investigates whether pharmacological blockade of two receptor subtypes in the brain produces distinct behavioral effects in mice across multiple anxiety-related measurement systems, and whether these effects generalize consistently across independent assays or remain context-specific.
+# Overview 
 
-# Data Description
-The dataset consists of behavioral measurements from two mouse genotypes (β4E61C and β2E61C) assigned to either control or pharmacological treatment groups. Animals were evaluated across three assays (Elevated O-Maze, Open Field, and Light–Dark Box) generating time-based, transition-based, and locomotor metrics. The O-Maze and Open Field were conducted on the same animals, enabling within-subject cross-assay analysis, whereas the Light–Dark Box used an independent cohort. Sample sizes ranged from 10–12 animals per group, with unequal group sizes handled using appropriate parametric or non-parametric statistical tests. The resulting dataset combines repeated-measures and between-subject structures, allowing both group-level comparisons and cross-system validation analyses.
+This project investigates whether pharmacological blockade of nicotinic receptor subtypes produces distinct anxiety-related behavioral effects across multiple behavioral systems.
 
-# Key techniques used
-Data cleaning ?
-Feature engineering of behavioral metrics (e.g., time allocation, transition counts, locomotor indicators)
-Group comparison tests (Welch t-tests, Wilcoxon rank-sum tests)
-Repeated-measures analysis for within-subject assay comparisons
-Correlation analysis across behavioral systems for matched subjects
-Data visualization using time allocation and behavioral distribution plots
-Handling of unbalanced sample sizes and non-normal distributions
+Behavioral responses were evaluated in:
 
-# How to run the code: 
+β4E61C and β2E61C mouse genotypes
+Control and treatment groups (CTRL vs MPEG)
+Elevated O-Maze and Open Field assays
+
+The workflow integrates:
+
+Cross-assay behavioral analytics
+Repeated-measures comparisons
+Correlation analysis across systems
+Publication-ready visualizations
+
+# Data and Methods
+
+The dataset contains behavioral measurements collected from mice tested across anxiety-related assays. The same animals were evaluated in multiple systems, enabling within-subject comparisons.
+
+Behavioral Metrics
+Time spent in anxiogenic zones
+Open-arm and center occupancy
+Transition frequency
+Locomotor activity
+Time-binned behavioral summaries
+Statistical Workflow
+
+The analysis pipeline includes:
+
+Data cleaning and preprocessing
+Feature engineering of behavioral variables
+Shapiro-Wilk normality testing
+Welch t-tests and Wilcoxon rank-sum tests
+Repeated-measures ANOVA
+Post hoc pairwise comparisons
+Pearson/Spearman correlation analysis
+Automated visualization generation using ggplot2
+
+The workflow is designed to handle:
+
+Unequal sample sizes
+Non-normal distributions
+Cross-system repeated-measures datasets
+
+
+# Running the analysis:
+
+Requirements:
+The workflow was developed in R using R Markdown and requires the following package -
+library(tidyverse)
+library(rstatix)
+library(ggplot2)
+library(emmeans)
+
+Install missing packages with: 
+
+install.packages(c(
+  "tidyverse",
+  "rstatix",
+  "ggplot2",
+  "emmeans"
+))
+
+Repository setup: Clone the repository
+
+git clone https://github.com/yourusername/cross-systems-behavioral-analytics.git
+cd cross-systems-behavioral-analytics 
+
+Data Setup: 
+
+Raw behavioral CSV files are not included in this repository.
+Before running the analysis, update the data directory inside OmazeCODEgit.rmd - base_dir <- "path/to/your/local/data"
+
+# Reproducibility
+
+The workflow was designed as a reproducible behavioral analytics pipeline.
+Because raw experimental datasets are not publicly distributed, users must
+provide local copies of the behavioral CSV files before running the analysis.
 
 # Example outputs:
-The analysis produces group comparison summaries for each behavioral assay, including statistical test results (p-values, test statistics), effect direction, and visualization of behavioral distributions across treatment groups. For repeated-measures subsets, cross-assay correlation outputs are generated to assess consistency of behavioral responses across systems. Final outputs include publication-ready plots illustrating group differences and behavioral patterns across experimental conditions.
+Running the workflow generates:
 
+Statistical summaries for O-Maze and Open Field assays
+Group comparison tables and normality testing results
+Cross-assay behavioral correlation analyses
+Publication-ready behavioral visualizations
+Exported CSV summaries and serialized R objects
 
+Generated outputs are automatically written to:
+outputs/plots/
+outputs/tables/
+
+Example outputs include:
+
+O-Maze open-arm occupancy visualizations
+Open Field locomotor and transition summaries
+Cross-assay behavioral correlation plots
+Statistical comparison tables
+
+Note: Output files are not included in this repository because they are generated dynamically from local experimental datasets.
+
+# Example results 
+
+O-Maze Open-Arm Occupancy
+Open Field Center Occupancy
+Cross-Assay Behavioral Correlation
+
+Figures shown are representative outputs generated from the analysis workflow.
