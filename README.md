@@ -116,7 +116,7 @@ Open Field Center Occupancy
 Openfield Distance Traveled 
 Cross-Assay Behavioral Correlation
 
-Figures shown are representative outputs generated from the analysis workflow.
+Note: Figures are derived from analysis outputs generated in R and were post-processed in Adobe Illustrator for publication-quality formatting.
 
 # Key Results
 
